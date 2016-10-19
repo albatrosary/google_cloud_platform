@@ -1,4 +1,4 @@
-## Google Cloud Console
+## Google Cloud Platform
 
 ### Test
 
@@ -21,3 +21,27 @@ gcloud app deploy
 ```
 
 http://my-projects-146905.appspot.com/
+
+
+## 
+
+### gcloud + git
+```bash
+$ git init
+$ git add .
+$ git commit -m "first commit"
+$ git remote add google https://source.developers.google.com/p/my-projects-146905/r/default
+$ git config --local credential.helper gcloud.sh
+$ git push --all google
+```
+
+### deploy
+
+```bash
+$ gcloud config set project my-projects-146905 \
+  && gcloud source repos clone default \
+    ~/src/my-projects-146905/default  \
+  && cd ~/src/my-projects-146905/default \
+  && git checkout master
+$ gcloud app deploy
+```
