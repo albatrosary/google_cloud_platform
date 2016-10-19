@@ -26,6 +26,17 @@ http://my-projects-146905.appspot.com/
 ## 
 
 ### gcloud + git
+
+```bash
+$ gcloud auth login
+```
+
+```bash
+$ gcloud init
+```
+
+or
+
 ```bash
 $ git init
 $ git add .
